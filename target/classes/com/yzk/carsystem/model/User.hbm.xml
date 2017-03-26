@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-7 21:05:49 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="com.yzk.carsystem.model.User" table="user">
+		<id name="user_id" type="int">
+			<column name="USER_ID" />
+			<generator class="native" />
+		</id>
+		<property name="username" type="java.lang.String">
+			<column name="USERNAME" />
+		</property>
+		<property name="password" type="java.lang.String">
+			<column name="PASSWORD" />
+		</property>
+		<property name="state" type="int">
+			<column name="STATE" />
+		</property>
+		<many-to-one name="roles" class="com.yzk.carsystem.model.Roles"
+			fetch="join">
+			<column name="role_id" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

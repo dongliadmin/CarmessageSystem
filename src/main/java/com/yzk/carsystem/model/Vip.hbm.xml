@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-14 10:31:21 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="com.yzk.carsystem.model.Vip" table="vip">
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<property name="level" type="java.lang.String">
+			<column name="level" />
+		</property>
+		<property name="discount" type="int">
+			<column name="discount" />
+		</property>
+		<set name="carlist" table="caruser" inverse="false" lazy="false">
+			<key>
+				<column name="id" />
+			</key>
+			<one-to-many class="com.yzk.carsystem.model.CarMaster" />
+		</set>
+	</class>
+</hibernate-mapping>

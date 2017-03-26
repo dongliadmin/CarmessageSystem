@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-7 21:05:49 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.yzk.carsystem.model.Module_functions" table="MODULE_FUNCTIONS">
+        <id name="fid" type="int">
+            <column name="functions_id" />
+            <generator class="native" />
+        </id>
+        <property name="functions_code" type="java.lang.String">
+            <column name="functions_code" />
+        </property>
+        <property name="description" type="java.lang.String">
+            <column name="description" />
+        </property>
+        <many-to-one name="modules" class="com.yzk.carsystem.model.Modules" fetch="join">
+            <column name="module_id" />
+        </many-to-one>
+        <set name="roleList" table="functions_role" inverse="false" lazy="false">
+            <key>
+                <column name="functions_id" />
+            </key>
+            <many-to-many class="com.yzk.carsystem.model.Roles" column="role_id" ></many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
