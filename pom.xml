@@ -5,7 +5,7 @@
 	<artifactId>CarmessageSystem</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>CarmessageSystem Maven Webapp</name>
+	<name>CarmessageSystem</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -179,7 +179,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>Permissions</finalName>
+		<finalName>CarmessageSystem</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>

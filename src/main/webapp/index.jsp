@@ -22,7 +22,7 @@
 	<div class="header">
 		<div class="dl-title"></div>
 		<div class="dl-log">
-			欢迎您，<span class="dl-log-user">${username }</span> <a
+			欢迎您 <span class="dl-log-user">${username }</span> <a
 				href="<%=basePath%>usercontrol/exitlogin.spring" title="退出系统"
 				class="dl-log-quit">[退出]</a>
 		</div>

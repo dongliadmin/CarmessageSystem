@@ -140,6 +140,7 @@ body {
 					&nbsp;&nbsp;
 					<button type="button" class="btn btn-success" name="backid"
 						id="backid">返回列表</button>
+					<h4 style="color: red">${error }</h4>
 				</td>
 			</tr>
 		</table>
@@ -149,8 +150,7 @@ body {
 <script>
 	$(function() {
 		$('#backid').click(function() {
-			window.location.href = "<%=path%>
-	/carcontrol/showcar.spring";
+			window.location.href = "<%=path%>/carcontrol/showcar.spring";
 		});
 	});
 </script>

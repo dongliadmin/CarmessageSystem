@@ -83,8 +83,11 @@ public class UserControl {
 	public String userlogin(User user, String save, Map<String, Object> map, HttpSession session,
 			HttpServletResponse response, HttpServletRequest request) {
 		if (userService.userLogin(user, save, map, session, response, request)) {
-			return "redirect:/usercontrol/index.spring?username=?" + user.getUsername();
+			map.put("username", user.getUsername());
+			// return "redirect:/usercontrol/index.spring?username=?" + user.getUsername();
+			return "redirect:/usercontrol/index.spring";
 		}
+		map.put("username", user.getUsername());
 		map.put("error", "用户名或密码错误或者未通过审核!");
 		return "login";
 	}

@@ -68,11 +68,11 @@ public class CarUserControl {
 
 	@RequestMapping("/addcaruser")
 	public String addcaruser(CarMaster carMaster, String level, Map<String, Object> map) {
-		System.out.println("<><><><><><><><><><><>><" + level);
 		if (caruserService.selectCarUserByName(carMaster.getName()) != null) {
 			map.put("error", "客户存在");
 			return "addcaruser";
 		}
+		System.out.println(carMaster + ">>>>>>>>>>>>>>>>>>");
 		caruserService.AddUser(carMaster, level);
 		return "redirect:/carcontrol/showcar.spring";
 	}
@@ -89,6 +89,7 @@ public class CarUserControl {
 		CarMaster carMaster = caruserService.selectCarUser(id);
 		List<String> vipNmaelist = vipService.showallVipName();
 		map.put("carMaster", carMaster);
+		System.out.println(vipNmaelist);
 		map.put("vipNmaelist", vipNmaelist);
 		return "updateCarUser";
 	}
